@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>LAHSC – Lebanese American Hunting & Sporting Club</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --olive:#2a2a12;--olive-mid:#3d3c1a;--olive-light:#5a5828;
+  --red:#8b1a1a;--red-light:#b52222;
+  --gold:#c9a84c;--gold-light:#e8c97a;--gold-pale:#f5eacc;
+  --cream:#f7f2e8;--cream-dark:#ede4cc;--cream-deeper:#e0d4b0;
+  --white:#fdfaf4;
+  --text-dark:#1e1c0e;--text-mid:#3d3820;--text-light:#6b6040;
+  --cedar-green:#2d5a1b;
+}
+body{
+  font-family:'Source Sans 3',sans-serif;color:var(--text-dark);overflow-x:hidden;
+  background-color:#111a06;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 900'%3E%3Cdefs%3E%3CradialGradient id='glow' cx='50%25' cy='85%25' r='55%25'%3E%3Cstop offset='0' stop-color='%23244d10' stop-opacity='0.8'/%3E%3Cstop offset='1' stop-color='%230a1204' stop-opacity='1'/%3E%3C/radialGradient%3E%3ClinearGradient id='trunkG' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23281a08'/%3E%3Cstop offset='0.4' stop-color='%23503820'/%3E%3Cstop offset='1' stop-color='%23281a08'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='900' fill='url(%23glow)'/%3E%3Crect x='378' y='500' width='44' height='380' rx='6' fill='url(%23trunkG)'/%3E%3Cellipse cx='400' cy='590' rx='195' ry='38' fill='%23193a0c' opacity='0.95'/%3E%3Cellipse cx='400' cy='550' rx='165' ry='33' fill='%231f4a10'/%3E%3Cellipse cx='400' cy='516' rx='138' ry='30' fill='%23275e14'/%3E%3Cellipse cx='400' cy='484' rx='115' ry='27' fill='%232f7018'/%3E%3Cellipse cx='400' cy='455' rx='94' ry='25' fill='%2338841c'/%3E%3Cellipse cx='400' cy='428' rx='76' ry='22' fill='%23419620'/%3E%3Cellipse cx='400' cy='404' rx='60' ry='20' fill='%234aa824'/%3E%3Cellipse cx='400' cy='382' rx='46' ry='18' fill='%2353b828'/%3E%3Cellipse cx='400' cy='362' rx='34' ry='16' fill='%235cc42c'/%3E%3Cellipse cx='400' cy='344' rx='24' ry='13' fill='%2364cc30'/%3E%3Cellipse cx='400' cy='330' rx='15' ry='10' fill='%236cd034'/%3E%3Cellipse cx='400' cy='319' rx='9' ry='7' fill='%2374d838'/%3E%3Cellipse cx='356' cy='575' rx='88' ry='18' fill='%23193a0c' transform='rotate(-16 356 575)'/%3E%3Cellipse cx='444' cy='575' rx='88' ry='18' fill='%23193a0c' transform='rotate(16 444 575)'/%3E%3Cellipse cx='348' cy='538' rx='75' ry='15' fill='%231f4a10' transform='rotate(-19 348 538)'/%3E%3Cellipse cx='452' cy='538' rx='75' ry='15' fill='%231f4a10' transform='rotate(19 452 538)'/%3E%3Cellipse cx='344' cy='506' rx='62' ry='13' fill='%23275e14' transform='rotate(-21 344 506)'/%3E%3Cellipse cx='456' cy='506' rx='62' ry='13' fill='%23275e14' transform='rotate(21 456 506)'/%3E%3Cellipse cx='342' cy='476' rx='52' ry='12' fill='%232f7018' transform='rotate(-23 342 476)'/%3E%3Cellipse cx='458' cy='476' rx='52' ry='12' fill='%232f7018' transform='rotate(23 458 476)'/%3E%3Cellipse cx='344' cy='450' rx='42' ry='11' fill='%2338841c' transform='rotate(-24 344 450)'/%3E%3Cellipse cx='456' cy='450' rx='42' ry='11' fill='%2338841c' transform='rotate(24 456 450)'/%3E%3Cellipse cx='348' cy='426' rx='32' ry='10' fill='%23419620' transform='rotate(-24 348 426)'/%3E%3Cellipse cx='452' cy='426' rx='32' ry='10' fill='%23419620' transform='rotate(24 452 426)'/%3E%3Cellipse cx='354' cy='406' rx='24' ry='9' fill='%234aa824' transform='rotate(-22 354 406)'/%3E%3Cellipse cx='446' cy='406' rx='24' ry='9' fill='%234aa824' transform='rotate(22 446 406)'/%3E%3Cellipse cx='800' cy='900' rx='200' ry='60' fill='%23111a06' opacity='0.7'/%3E%3Cellipse cx='0' cy='900' rx='200' ry='60' fill='%23111a06' opacity='0.7'/%3E%3C/svg%3E");
+  background-size:cover;
+  background-position:center bottom;
+  background-attachment:fixed;
+  background-repeat:no-repeat;
+}
+
+.section-light{background:var(--white)}
+.section-cream{background:var(--cream)}
+.section-cream-dark{background:var(--cream-dark)}
+.section-dark{background:rgba(14,22,6,0.95)}
+.section-dark-2{background:rgba(18,14,4,0.96)}
+
+nav{background:rgba(12,9,2,0.97);border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:500}
+.nav-stripe{height:4px;background:repeating-linear-gradient(90deg,var(--red) 0,var(--red) 33%,#fff 33%,#fff 50%,var(--red) 50%,var(--red) 66%,var(--cedar-green) 66%,var(--cedar-green) 100%);opacity:0.75}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:68px}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.nav-logo img{width:52px;height:52px;border-radius:50%;border:2px solid var(--gold);object-fit:cover}
+.nav-logo-text{font-family:'Cinzel',serif;color:var(--gold-light);font-size:15px;font-weight:600;line-height:1.15}
+.nav-logo-text span{display:block;font-size:10px;font-weight:400;color:#b8a870;letter-spacing:2px;font-family:'Source Sans 3',sans-serif;margin-top:2px}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a,.dropdown-btn{color:#d4c990;text-decoration:none;font-size:12px;font-weight:400;letter-spacing:0.8px;padding:8px 12px;border-radius:3px;transition:all 0.2s;background:none;border:none;cursor:pointer;font-family:'Source Sans 3',sans-serif;text-transform:uppercase}
+.nav-links a:hover,.dropdown-btn:hover{color:var(--gold-light);background:rgba(201,168,76,0.1)}
+.dropdown{position:relative}
+.dropdown{
+  position:relative;
+  padding-bottom:8px;
+}
+
+.dropdown-menu{
+  position:absolute;
+  top:100%;
+  left:0;
+  background:rgba(12,9,2,0.99);
+  border:1px solid var(--gold);
+  border-top:2px solid var(--gold);
+  border-radius:0 0 6px 6px;
+  padding:6px;
+  min-width:175px;
+  display:none;
+  z-index:600;
+  box-shadow:0 8px 20px rgba(0,0,0,0.6);
+  margin-top:0;
+}
+.dropdown:hover .dropdown-menu{display:block}
+.dropdown-menu a{display:block;color:#d4c990;text-decoration:none;font-size:12px;padding:8px 12px;border-radius:3px;letter-spacing:0.5px;transition:background 0.15s;text-transform:uppercase}
+.dropdown-menu a:hover{background:rgba(201,168,76,0.15);color:var(--gold-light)}
+.nav-join{background:var(--red) !important;color:#fff !important;font-weight:600 !important;border-radius:3px;letter-spacing:1px !important}
+.nav-join:hover{background:var(--red-light) !important}
+.nav-admin-btn{border:1px solid rgba(201,168,76,0.4);color:var(--gold) !important;border-radius:3px;background:none;cursor:pointer;font-size:11px;padding:7px 12px;text-transform:uppercase;letter-spacing:0.5px}
+
+.hero{position:relative;overflow:hidden;padding:90px 1.5rem 80px;background:transparent}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,14,3,0.85) 0%,rgba(8,14,3,0.5) 55%,rgba(8,14,3,0.78) 100%)}
+.hero-border-top{position:absolute;top:0;left:0;right:0;height:5px;background:repeating-linear-gradient(90deg,var(--red) 0,var(--red) 50%,var(--cedar-green) 50%,var(--cedar-green) 100%)}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 310px;gap:60px;align-items:center;position:relative;z-index:1}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.hero-eyebrow-line{height:1px;width:40px;background:var(--gold)}
+.hero-eyebrow span{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:600}
+h1.hero-title{font-family:'Cinzel',serif;font-size:46px;font-weight:700;color:var(--gold-light);line-height:1.15;margin-bottom:8px}
+.hero-subtitle{font-family:'EB Garamond',serif;font-size:22px;font-style:italic;color:#c8d8a8;margin-bottom:18px;line-height:1.4}
+.hero-desc{color:#9ab080;font-size:16px;line-height:1.8;font-weight:300;margin-bottom:24px;max-width:480px}
+.hero-arabic{font-size:14px;color:var(--gold);opacity:0.8;margin-bottom:28px;font-family:'EB Garamond',serif}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn-red{background:var(--red);color:#fff;font-weight:600;border:none;padding:13px 28px;border-radius:3px;font-size:13px;cursor:pointer;font-family:'Source Sans 3',sans-serif;text-decoration:none;display:inline-block;transition:all 0.2s;letter-spacing:0.5px;text-transform:uppercase}
+.btn-red:hover{background:var(--red-light)}
+.btn-gold-outline{border:1.5px solid var(--gold);color:var(--gold-light);background:transparent;padding:12px 28px;border-radius:3px;font-size:13px;cursor:pointer;font-family:'Source Sans 3',sans-serif;text-decoration:none;display:inline-block;transition:all 0.2s;letter-spacing:0.5px;text-transform:uppercase}
+.btn-gold-outline:hover{background:rgba(201,168,76,0.12)}
+.hero-logo-wrap{display:flex;flex-direction:column;align-items:center;gap:16px}
+.hero-logo-wrap img{width:260px;height:260px;object-fit:contain;filter:drop-shadow(0 6px 30px rgba(0,0,0,0.75));animation:floatLogo 4s ease-in-out infinite}
+@keyframes floatLogo{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hero-logo-tagline{font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--gold);text-align:center;text-transform:uppercase}
+
+.ornament{display:flex;align-items:center;gap:16px;max-width:400px;margin:0 auto;padding:28px 0}
+.ornament-line{flex:1;height:1px;background:var(--cream-deeper)}
+.ornament-center{font-family:'Cinzel',serif;font-size:18px;color:var(--gold);letter-spacing:4px}
+
+section{padding:72px 1.5rem;position:relative;z-index:1}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.section-eyebrow-line{height:1px;width:32px;background:var(--gold)}
+.section-eyebrow span{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:600}
+h2.section-title{font-family:'Cinzel',serif;font-size:30px;font-weight:700;color:var(--olive);margin-bottom:14px;line-height:1.2}
+h2.light{color:var(--gold-light) !important}
+.section-sub{font-family:'EB Garamond',serif;font-size:18px;color:var(--text-light);line-height:1.7;margin-bottom:44px;max-width:600px;font-style:italic}
+.sub-light{color:#9ea882 !important}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.about-pillars{display:flex;flex-direction:column;gap:18px}
+.pillar{display:flex;gap:14px;align-items:flex-start;padding:20px;border-radius:4px;border-left:3px solid var(--gold);background:var(--cream)}
+.pillar-icon{font-size:22px;flex-shrink:0;margin-top:1px}
+.pillar h4{font-family:'Cinzel',serif;font-size:13px;font-weight:600;color:var(--olive);margin-bottom:4px;letter-spacing:0.5px}
+.pillar p{font-size:13px;color:var(--text-light);line-height:1.65}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.stat-box{background:var(--cream);border:1px solid var(--cream-deeper);border-top:2px solid var(--gold);border-radius:3px;padding:16px;text-align:center}
+.stat-num{font-family:'Cinzel',serif;font-size:28px;font-weight:700;color:var(--olive)}
+.stat-lbl{font-size:10px;color:var(--text-light);text-transform:uppercase;letter-spacing:1.5px;margin-top:3px}
+.about-img-frame{border:1px solid var(--cream-deeper);border-radius:6px;overflow:hidden;background:rgba(30,50,14,0.6);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
+.about-img-placeholder{display:flex;flex-direction:column;align-items:center;gap:8px;color:#8a9a70;font-size:13px;text-align:center}
+.about-img-placeholder .ico{font-size:40px;opacity:0.4}
+.about-quote{margin-top:18px;padding:18px 22px;background:var(--cream);border-left:3px solid var(--red);border-radius:0 4px 4px 0}
+.about-quote blockquote{font-family:'EB Garamond',serif;font-size:17px;font-style:italic;color:var(--text-mid);line-height:1.7}
+.about-quote cite{display:block;margin-top:6px;font-size:11px;color:var(--text-light);letter-spacing:1px;text-transform:uppercase;font-style:normal}
+
+.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px}
+.event-card{background:rgba(247,242,232,0.05);border:1px solid rgba(201,168,76,0.22);border-top:3px solid var(--gold);border-radius:4px;padding:22px;transition:all 0.25s;cursor:pointer}
+.event-card:hover{background:rgba(201,168,76,0.08);transform:translateY(-3px)}
+.event-date-badge{background:var(--gold);color:var(--olive);display:inline-flex;flex-direction:column;align-items:center;padding:7px 13px;border-radius:3px;margin-bottom:14px;min-width:58px}
+.event-date-badge .mo{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;font-family:'Cinzel',serif}
+.event-date-badge .dy{font-size:26px;font-weight:700;font-family:'Cinzel',serif;line-height:1}
+.event-type-lbl{font-size:9px;color:var(--gold);letter-spacing:3px;text-transform:uppercase;margin-bottom:5px;font-weight:600}
+.event-name{font-family:'Cinzel',serif;font-size:15px;color:var(--cream);margin-bottom:7px;font-weight:600;line-height:1.3}
+.event-details{font-size:13px;color:#8a9a70;line-height:1.7}
+.event-tag{display:inline-block;font-size:9px;padding:3px 10px;border-radius:20px;margin-top:10px;letter-spacing:1px;text-transform:uppercase;font-weight:600}
+.tag-shoot{background:rgba(201,168,76,0.15);color:var(--gold-light)}
+.tag-hunt{background:rgba(45,90,27,0.4);color:#8dd47f}
+.tag-social{background:rgba(139,26,26,0.3);color:#e08070}
+.empty-events{text-align:center;padding:44px;color:#6a7a58;font-family:'EB Garamond',serif;font-style:italic;font-size:18px;border:1px dashed rgba(201,168,76,0.18);border-radius:4px;grid-column:1/-1}
+
+.notify-box{background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:6px;padding:32px;margin-top:28px}
+.notify-title{font-family:'Cinzel',serif;font-size:17px;color:var(--gold-light);margin-bottom:7px}
+.notify-sub{font-size:14px;color:#8a9a70;margin-bottom:18px;line-height:1.6}
+.notify-form{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.notify-field{display:flex;flex-direction:column;gap:5px;flex:1;min-width:150px}
+.notify-field label{font-size:10px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.notify-field input{background:rgba(255,255,255,0.07);border:1px solid rgba(201,168,76,0.18);border-radius:3px;padding:10px 13px;color:var(--cream);font-family:'Source Sans 3',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s}
+.notify-field input:focus{border-color:var(--gold)}
+.notify-field input::placeholder{color:#505040}
+.btn-notify{background:var(--red);color:#fff;border:none;padding:10px 22px;border-radius:3px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Source Sans 3',sans-serif;white-space:nowrap;transition:background 0.2s;letter-spacing:0.5px;text-transform:uppercase}
+.btn-notify:hover{background:var(--red-light)}
+.notify-success{display:none;color:#8dd47f;font-family:'EB Garamond',serif;font-style:italic;font-size:15px;margin-top:10px}
+
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gal-item{border-radius:4px;overflow:hidden;aspect-ratio:4/3;background:rgba(25,42,10,0.7);display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer;transition:transform 0.2s;border:1px solid rgba(201,168,76,0.15)}
+.gal-item:hover{transform:scale(1.02)}
+.gal-item.tall{grid-row:span 2;aspect-ratio:auto}
+.gal-item img{width:100%;height:100%;object-fit:cover}
+.gal-item .caption{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.58);color:#fff;font-size:11px;padding:6px 10px;font-family:'Cinzel',serif}
+.gal-placeholder{display:flex;flex-direction:column;align-items:center;gap:8px;color:#6a7a58;font-size:12px}
+.gal-placeholder .big{font-size:32px;opacity:0.3}
+.gallery-empty-msg{text-align:center;color:var(--text-light);font-family:'EB Garamond',serif;font-style:italic;font-size:18px;padding:40px;grid-column:1/-1}
+
+.mem-card-main{background:rgba(12,9,2,0.94);border-radius:6px;padding:48px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;border:1px solid rgba(201,168,76,0.22);position:relative;overflow:hidden}
+.mem-card-main::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(201,168,76,0.07)}
+.mem-title{font-family:'Cinzel',serif;font-size:26px;color:var(--gold-light);margin-bottom:10px}
+.mem-desc{font-family:'EB Garamond',serif;font-size:17px;color:#9ea882;font-style:italic;line-height:1.7;margin-bottom:18px}
+.mem-perks{display:flex;flex-wrap:wrap;gap:9px}
+.mem-perk{display:flex;align-items:center;gap:6px;font-size:12px;color:#b8c490;background:rgba(201,168,76,0.07);padding:5px 12px;border-radius:3px;border:1px solid rgba(201,168,76,0.1)}
+.mem-perk::before{content:'✦';color:var(--gold);font-size:8px}
+.free-circle{width:120px;height:120px;border:2px solid var(--gold);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.free-word{font-family:'Cinzel',serif;font-size:32px;font-weight:700;color:var(--gold-light);line-height:1}
+.free-sub{font-size:10px;letter-spacing:3px;color:#8a9a70;text-transform:uppercase;margin-top:3px}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.contact-form{display:flex;flex-direction:column;gap:14px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-field{display:flex;flex-direction:column;gap:5px}
+.form-field label{font-size:10px;color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.form-field input,.form-field select,.form-field textarea{background:rgba(255,255,255,0.06);border:1px solid rgba(201,168,76,0.18);border-radius:3px;padding:10px 13px;color:var(--cream);font-family:'Source Sans 3',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s;resize:vertical}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--gold)}
+.form-field select option{background:#140e02}
+.form-field input::placeholder,.form-field textarea::placeholder{color:#504830}
+.contact-submit{background:var(--red);color:#fff;border:none;padding:12px 30px;border-radius:3px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Source Sans 3',sans-serif;align-self:flex-start;transition:background 0.2s;text-transform:uppercase;letter-spacing:0.5px}
+.contact-submit:hover{background:var(--red-light)}
+.contact-info{display:flex;flex-direction:column;gap:22px}
+.cinfo-item{display:flex;gap:13px;align-items:flex-start}
+.cinfo-icon{width:40px;height:40px;border:1px solid rgba(201,168,76,0.22);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;background:rgba(201,168,76,0.05)}
+.cinfo-text h4{font-family:'Cinzel',serif;color:var(--cream);font-size:12px;margin-bottom:3px;letter-spacing:0.5px}
+.cinfo-text p{font-size:13px;color:#8a9a70;line-height:1.65}
+
+footer{background:rgba(6,8,2,0.98);padding:36px 1.5rem;border-top:2px solid var(--gold);position:relative;z-index:2}
+.footer-top{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px;padding-bottom:20px;border-bottom:1px solid rgba(201,168,76,0.1)}
+.footer-logo{display:flex;align-items:center;gap:10px}
+.footer-logo img{width:42px;height:42px;border-radius:50%;border:1px solid var(--gold);object-fit:contain}
+.footer-logo-text{font-family:'Cinzel',serif;color:var(--gold);font-size:13px}
+.footer-logo-text span{display:block;font-size:9px;color:#3a3a18;letter-spacing:2px;font-family:'Source Sans 3',sans-serif;margin-top:2px}
+.footer-links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.footer-links a{color:#454518;font-size:11px;text-decoration:none;transition:color 0.2s;letter-spacing:0.5px;text-transform:uppercase}
+.footer-links a:hover{color:var(--gold-light)}
+.footer-est{font-family:'Cinzel',serif;font-size:10px;color:#303012;letter-spacing:2px;text-align:right}
+.footer-copy{max-width:1200px;margin:14px auto 0;font-size:10px;color:#2a2a0a;text-align:center;letter-spacing:0.5px}
+
+/* ADMIN */
+#admin-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.78);z-index:1000;overflow-y:auto}
+#admin-panel{background:var(--cream);min-height:100%;max-width:920px;margin:0 auto}
+.admin-header{background:rgba(12,9,2,0.99);padding:18px 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid var(--gold);position:sticky;top:0;z-index:10}
+.admin-header h2{font-family:'Cinzel',serif;color:var(--gold-light);font-size:19px}
+.admin-close{background:var(--red);color:#fff;border:none;padding:8px 16px;border-radius:3px;cursor:pointer;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px}
+.admin-tabs{display:flex;background:rgba(22,16,3,0.99);padding:0 28px;border-bottom:1px solid rgba(201,168,76,0.15)}
+.admin-tab{padding:13px 18px;font-size:12px;font-family:'Cinzel',serif;letter-spacing:0.5px;cursor:pointer;color:#a09060;border-bottom:3px solid transparent;transition:all 0.2s;background:none;border-top:none;border-left:none;border-right:none}
+.admin-tab.active{color:var(--gold-light);border-bottom-color:var(--gold)}
+.admin-tab:hover{color:var(--gold-light)}
+.admin-body{padding:26px}
+.admin-section{display:none}
+.admin-section.active{display:block}
+.admin-section h3{font-family:'Cinzel',serif;font-size:15px;color:var(--olive);margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--cream-deeper)}
+.admin-form{display:flex;flex-direction:column;gap:12px;margin-bottom:24px;background:var(--white);padding:18px;border-radius:4px;border:1px solid var(--cream-deeper)}
+.af-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.af-field{display:flex;flex-direction:column;gap:4px}
+.af-field label{font-size:10px;font-weight:600;color:var(--olive);letter-spacing:1px;text-transform:uppercase}
+.af-field input,.af-field select,.af-field textarea{background:var(--cream);border:1px solid var(--cream-deeper);border-radius:3px;padding:9px 11px;font-family:'Source Sans 3',sans-serif;font-size:13px;color:var(--text-dark);outline:none;transition:border-color 0.2s;resize:vertical}
+.af-field input:focus,.af-field select:focus,.af-field textarea:focus{border-color:var(--gold)}
+.btn-admin-add{background:var(--olive);color:var(--gold-light);border:none;padding:9px 20px;border-radius:3px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Cinzel',serif;letter-spacing:0.5px;transition:all 0.2s;align-self:flex-start}
+.btn-admin-add:hover{background:var(--olive-mid)}
+.admin-list{display:flex;flex-direction:column;gap:8px}
+.admin-list-item{background:var(--white);border:1px solid var(--cream-deeper);border-radius:4px;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.admin-list-item-info{flex:1}
+.admin-list-item-info strong{font-family:'Cinzel',serif;font-size:12px;color:var(--olive);display:block;margin-bottom:2px}
+.admin-list-item-info span{font-size:11px;color:var(--text-light)}
+.admin-item-btns{display:flex;gap:5px}
+.btn-del{background:var(--red);color:#fff;border:none;padding:5px 11px;border-radius:3px;font-size:10px;cursor:pointer;font-weight:600;text-transform:uppercase;transition:background 0.2s}
+.btn-del:hover{background:var(--red-light)}
+.admin-empty{text-align:center;color:var(--text-light);font-family:'EB Garamond',serif;font-style:italic;font-size:15px;padding:20px;background:var(--white);border-radius:4px;border:1px dashed var(--cream-deeper)}
+.upload-area{border:2px dashed var(--cream-deeper);border-radius:5px;padding:28px;text-align:center;background:var(--white);cursor:pointer;transition:all 0.2s}
+.upload-area:hover{border-color:var(--gold);background:var(--cream)}
+.upload-area input{display:none}
+.admin-admins-note{background:var(--gold-pale);border:1px solid var(--gold);border-radius:4px;padding:12px 14px;font-size:13px;color:var(--olive);margin-bottom:14px;line-height:1.6}
+.subscribers-list{background:var(--white);border:1px solid var(--cream-deeper);border-radius:4px;overflow:hidden}
+.sub-row{display:flex;align-items:center;justify-content:space-between;padding:9px 13px;border-bottom:1px solid var(--cream-deeper);font-size:13px}
+.sub-row:last-child{border-bottom:none}
+.sub-row .sub-info{color:var(--text-mid)}
+.sub-row .sub-info span{color:var(--text-light);font-size:11px;margin-left:7px}
+.admin-login-wrap{padding:44px 28px;display:flex;justify-content:center}
+.login-box{background:var(--white);border:1px solid var(--cream-deeper);border-radius:6px;padding:30px;width:100%;max-width:360px}
+.login-box h3{font-family:'Cinzel',serif;font-size:17px;color:var(--olive);margin-bottom:18px;text-align:center}
+.login-fields{display:flex;flex-direction:column;gap:12px}
+.btn-login{width:100%;background:var(--olive);color:var(--gold-light);border:none;padding:11px;border-radius:3px;font-family:'Cinzel',serif;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:0.5px;transition:background 0.2s;margin-top:4px}
+.btn-login:hover{background:var(--olive-mid)}
+.login-error{color:var(--red);font-size:12px;text-align:center;display:none;margin-top:4px}
+
+@media(max-width:800px){
+  .hero-inner,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-logo-wrap{display:none}
+  .events-grid,.gallery-grid{grid-template-columns:1fr}
+  .mem-card-main{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .footer-est{text-align:left}
+  .nav-links .dropdown{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ADMIN OVERLAY -->
+<div id="admin-overlay">
+  <div id="admin-panel">
+    <div class="admin-header">
+      <h2>⚙ LAHSC Admin Panel</h2>
+      <button class="admin-close" onclick="closeAdmin()">✕ Close</button>
+    </div>
+    <div id="admin-login-screen" class="admin-login-wrap">
+      <div class="login-box">
+        <h3>Admin Login</h3>
+        <div class="login-fields">
+          <div class="af-field"><label>Username</label><input type="text" id="login-user" placeholder="Enter username"/></div>
+          <div class="af-field"><label>Password</label><input type="password" id="login-pass" placeholder="Enter password" onkeydown="if(event.key==='Enter')doLogin()"/></div>
+          <div class="login-error" id="login-error">Invalid credentials. Please try again.</div>
+          <button class="btn-login" onclick="doLogin()">Sign In</button>
+        </div>
+		
+      </div>
+    </div>
+    <div id="admin-main" style="display:none">
+      <div class="admin-tabs">
+        <button class="admin-tab active" onclick="switchTab('events')">📅 Events</button>
+        <button class="admin-tab" onclick="switchTab('gallery')">📷 Gallery</button>
+        <button class="admin-tab" onclick="switchTab('about')">🏕 About</button>
+        <button class="admin-tab" onclick="switchTab('subscribers')">🔔 Subscribers</button>
+        <button class="admin-tab" onclick="switchTab('admins')">👤 Admins</button>
+      </div>
+      <div class="admin-body">
+        <div class="admin-section active" id="tab-events">
+          <h3>Manage Events & Tournaments</h3>
+          <div class="admin-form">
+            <div class="af-row">
+              <div class="af-field"><label>Event Name</label><input type="text" id="ev-name" placeholder="Spring Shoot-Off Championship"/></div>
+              <div class="af-field"><label>Type</label>
+                <select id="ev-type">
+                  <option value="shoot">Sporting Clays / Shooting</option>
+                  <option value="hunt">Hunting Trip</option>
+                  <option value="social">Club Social / BBQ</option>
+                  <option value="tournament">Tournament</option>
+                  <option value="course">Safety / Education</option>
+                </select>
+              </div>
+            </div>
+            <div class="af-row">
+              <div class="af-field"><label>Date</label><input type="date" id="ev-date"/></div>
+              <div class="af-field"><label>Time</label><input type="text" id="ev-time" placeholder="8:00 AM"/></div>
+            </div>
+            <div class="af-row">
+              <div class="af-field"><label>Location</label><input type="text" id="ev-location" placeholder="Range name, city, MI"/></div>
+              <div class="af-field"><label>Access</label>
+                <select id="ev-access">
+                  <option value="all">Open to All</option>
+                  <option value="members">Members Only</option>
+                  <option value="invite">By Invitation</option>
+                </select>
+              </div>
+            </div>
+            <div class="af-field"><label>Description</label><textarea id="ev-desc" rows="2" placeholder="Additional details..."></textarea></div>
+            <button class="btn-admin-add" onclick="addEvent()">+ Add Event</button>
+          </div>
+          <div id="events-admin-list" class="admin-list"></div>
+        </div>
+
+        <div class="admin-section" id="tab-gallery">
+          <h3>Manage Photo Gallery</h3>
+          <div class="admin-form">
+            <div class="af-field"><label>Caption</label><input type="text" id="gal-caption" placeholder="Spring Shoot 2024"/></div>
+            <div class="af-field"><label>Upload Photo</label>
+              <div class="upload-area" onclick="document.getElementById('gal-file').click()">
+                <div style="font-size:26px;margin-bottom:6px">📷</div>
+                <div style="font-family:'Cinzel',serif;font-size:13px;color:var(--olive);margin-bottom:3px">Click to Select Photo</div>
+                <div style="font-size:11px;color:var(--text-light)">JPG or PNG</div>
+                <input type="file" id="gal-file" accept="image/*" onchange="previewGalImg(event)"/>
+              </div>
+              <div id="gal-preview" style="display:none;margin-top:10px">
+                <img id="gal-preview-img" style="max-height:110px;border-radius:4px;border:1px solid var(--cream-deeper)"/>
+              </div>
+            </div>
+            <button class="btn-admin-add" onclick="addGalleryItem()">+ Add to Gallery</button>
+          </div>
+          <div id="gallery-admin-list" class="admin-list"></div>
+        </div>
+
+        <div class="admin-section" id="tab-about">
+          <h3>Edit Club Info</h3>
+          <div class="admin-form">
+            <div class="af-field"><label>Hero Tagline</label><input type="text" id="ab-tagline" placeholder="Where Heritage Meets the Field"/></div>
+            <div class="af-field"><label>Club Description</label><textarea id="ab-desc" rows="3" placeholder="Short paragraph about the club..."></textarea></div>
+            <div class="af-row">
+              <div class="af-field"><label>Member Count</label><input type="text" id="ab-members" placeholder="200+"/></div>
+              <div class="af-field"><label>Events Per Year</label><input type="text" id="ab-events" placeholder="12"/></div>
+            </div>
+            <div class="af-field"><label>Featured Quote</label><input type="text" id="ab-quote" placeholder="Our mission statement..."/></div>
+            <button class="btn-admin-add" onclick="saveAbout()">💾 Save Changes</button>
+          </div>
+          <div id="about-saved-msg" style="display:none;color:var(--cedar-green);font-family:'EB Garamond',serif;font-style:italic;font-size:15px;padding:10px">✓ Saved successfully.</div>
+        </div>
+
+        <div class="admin-section" id="tab-subscribers">
+          <h3>Event Reminder Subscribers</h3>
+          <div id="subscribers-list-wrap"></div>
+        </div>
+
+        <div class="admin-section" id="tab-admins">
+          <h3>Manage Admin Users</h3>
+          <div class="admin-admins-note">Add usernames and passwords for other club leaders who need admin access. Each can log in independently to manage events, photos, and content.</div>
+          <div class="admin-form">
+            <div class="af-row">
+              <div class="af-field"><label>Username</label><input type="text" id="new-admin-user" placeholder="joesmith"/></div>
+              <div class="af-field"><label>Password</label><input type="text" id="new-admin-pass" placeholder="Set a password"/></div>
+            </div>
+            <div class="af-field"><label>Full Name (optional)</label><input type="text" id="new-admin-name" placeholder="Joe Smith"/></div>
+            <button class="btn-admin-add" onclick="addAdmin()">+ Add Admin</button>
+          </div>
+          <div id="admins-list" class="admin-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav-stripe"></div>
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="club.jpg" alt="LAHSC Logo"/>
+      <div class="nav-logo-text">Lebanese American H.S.C.<span>Est. 2022 · Michigan</span></div>
+    </a>
+    <div class="nav-links">
+  <div class="dropdown">
+    <button class="dropdown-btn">Home ▾</button>
+    <div class="dropdown-menu">
+      <a href="#">Welcome</a>
+      <a href="#intro">Club Introduction</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">About ▾</button>
+    <div class="dropdown-menu">
+      <a href="#about">Our Mission</a>
+      <a href="#about">Shooter Development</a>
+      <a href="#membership">Membership</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">Events ▾</button>
+    <div class="dropdown-menu">
+      <a href="#events">Upcoming Events</a>
+      <a href="#events">Tournaments</a>
+      <a href="#events">Hunting Trips</a>
+      <a href="#events">Safety & Education</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">Gallery ▾</button>
+    <div class="dropdown-menu">
+      <a href="#gallery">Club Photos</a>
+      <a href="#gallery">Range Days</a>
+      <a href="#gallery">Hunting Memories</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">Contact ▾</button>
+    <div class="dropdown-menu">
+      <a href="#contact">Contact Us</a>
+      <a href="#membership">Join the Club</a>
+    </div>
+  </div>
+
+  <a href="#membership" class="nav-join">Join Free</a>
+  <button class="nav-admin-btn" onclick="openAdmin()">⚙ Admin</button>
+</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-border-top"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow"><div class="hero-eyebrow-line"></div><span>Est. 2020 · Michigan</span></div>
+      <h1 class="hero-title" id="hero-title-el">Lebanese American<br>Hunting & Sporting<br>Club</h1>
+      <p class="hero-subtitle" id="hero-tagline-el">Where Heritage Meets the Field</p>
+      <p class="hero-desc" id="hero-desc-el">
+  LAHSC was founded to bring people together through hunting, shotgun sports, and shared outdoor traditions. The club connects members from different backgrounds and countries, creating a welcoming community where experienced shooters, hunters, and beginners can learn from one another.
+</p>
+      <p class="hero-arabic">نادي الصيد و الرمايه اللبناني الاميركي · Est. 2020</p>
+      <div class="hero-cta">
+        <a href="#membership" class="btn-red">Join the Club — Free</a>
+        <a href="#events" class="btn-gold-outline">Upcoming Events</a>
+      </div>
+    </div>
+    <div class="hero-logo-wrap">
+      <img src="club.jpg" alt="LAHSC Official Club Logo"/>
+      <div class="hero-logo-tagline">· Education · Sport · Heritage ·</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section-light" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>Who We Are</span></div>
+        <h2 class="section-title">A Club Built on Brotherhood & Sport</h2>
+       <p class="section-sub" id="about-desc-el">
+  Our club introduces new members to the three main parts of our community: shotgun shooting from Skeet to Trap and, Sporting clays, and hunting. Many members begin with little or no experience, then grow through practice, guidance, and competition. From beginner and hunter class shooters to advanced competitors, including AA and Master class levels, LAHSC gives every member a place to improve, compete, and belong.
+</p>
+        <div class="about-pillars">
+          <div class="pillar"><span class="pillar-icon">🎯</span><div><h4>Sporting Excellence</h4><p>From sporting clays to trap shooting and tournaments, we challenge and reward members at every level.</p></div></div>
+          <div class="pillar"><span class="pillar-icon">📚</span><div><h4>Safety & Education</h4><p>Firearm safety courses, hunter education, and responsible ownership for all ages and experience levels.</p></div></div>
+          <div class="pillar"><span class="pillar-icon">🤝</span><div><h4>Community & Heritage</h4><p>Celebrating Lebanese roots and American traditions — at the range, in the field, and at the table.</p></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="about-img-frame" id="about-img-frame">
+          <div class="about-img-placeholder">
+            <div class="ico">🏕️</div>
+            <p>Club photo coming soon</p>
+            <p style="font-size:11px;color:#5a6a48;margin-top:4px">Add via Admin → Gallery</p>
+          </div>
+        </div>
+        <div class="about-quote">
+          <blockquote id="about-quote-el">""Our mission is to build a strong sporting community where beginners become confident shooters, experienced members become mentors, and everyone grows through safety, discipline, and brotherhood."."</blockquote>
+          <cite>— Lebanese American Hunting & Sporting Club, Est. 2022</cite>
+        </div>
+        <div class="stat-row">
+          <div class="stat-box"><div class="stat-num" id="stat-members">200+</div><div class="stat-lbl">Members</div></div>
+          <div class="stat-box"><div class="stat-num">2022</div><div class="stat-lbl">Founded</div></div>
+          <div class="stat-box"><div class="stat-num" id="stat-events">12</div><div class="stat-lbl">Events/Year</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="section-dark" id="events">
+  <div class="section-inner">
+    <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>Schedule</span></div>
+    <h2 class="section-title light">Upcoming Events & Tournaments</h2>
+    <p class="section-sub sub-light">From sporting clay competitions to hunting trips and club socials — there's always something happening at LAHSC.</p>
+    <div class="events-grid" id="events-grid">
+      <div class="empty-events">No events scheduled yet. Check back soon — or subscribe below for reminders!</div>
+    </div>
+    <div class="notify-box">
+      <div class="notify-title">🔔 Get Event Reminders</div>
+      <div class="notify-sub">Enter your info to receive notifications about upcoming events and tournaments by email or text.</div>
+      <div class="notify-form">
+        <div class="notify-field"><label>Your Name</label><input type="text" id="sub-name" placeholder="Joe Haddad"/></div>
+        <div class="notify-field"><label>Email</label><input type="email" id="sub-email" placeholder="joe@email.com"/></div>
+        <div class="notify-field"><label>Phone (optional)</label><input type="tel" id="sub-phone" placeholder="(313) 555-0100"/></div>
+        <button class="btn-notify" onclick="addSubscriber()">Subscribe</button>
+      </div>
+      <div class="notify-success" id="sub-success">✓ You're signed up! We'll notify you about upcoming events.</div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section-cream-dark" id="gallery">
+  <div class="section-inner">
+    <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>Photo Album</span></div>
+    <h2 class="section-title">Club Gallery</h2>
+    <p class="section-sub">Moments from the range, the field, and the clubhouse.</p>
+    <div id="gallery-grid" class="gallery-grid">
+      <div class="gallery-empty-msg">No photos yet. Add them via the Admin panel.</div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section class="section-light" id="membership">
+  <div class="section-inner">
+    <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>Join the Club</span></div>
+    <h2 class="section-title">Membership is Always Free</h2>
+    <p class="section-sub">No fees, no barriers. Just a shared love for the sport and the heritage.</p>
+    <div class="mem-card-main">
+      <div>
+        <div class="mem-title">Open to All — No Cost</div>
+        <div class="mem-desc">LAHSC welcomes hunters, shooters, and sporting enthusiasts of all backgrounds. Our club was built on brotherhood and community — everyone belongs here.</div>
+        <div class="mem-perks">
+          <span class="mem-perk">Range Access</span>
+          <span class="mem-perk">All Club Events</span>
+          <span class="mem-perk">Hunting Trips</span>
+          <span class="mem-perk">Tournaments</span>
+          <span class="mem-perk">Safety Courses</span>
+          <span class="mem-perk">Youth Program</span>
+          <span class="mem-perk">Community Network</span>
+        </div>
+        <div style="margin-top:24px"><a href="#contact" class="btn-red" style="display:inline-block">Apply to Join →</a></div>
+      </div>
+      <div><div class="free-circle"><div class="free-word">FREE</div><div class="free-sub">Always</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section-dark-2" id="contact">
+  <div class="section-inner">
+    <div class="section-eyebrow"><div class="section-eyebrow-line"></div><span>Reach Out</span></div>
+    <h2 class="section-title light">Contact Us</h2>
+    <p class="section-sub sub-light">Questions about the club, membership, or events? We'd love to hear from you.</p>
+    <div class="contact-grid">
+      <form class="contact-form" onsubmit="return false">
+        <div class="form-row">
+          <div class="form-field"><label>First Name</label><input type="text" placeholder="Georges"/></div>
+          <div class="form-field"><label>Last Name</label><input type="text" placeholder="Haddad"/></div>
+        </div>
+        <div class="form-field"><label>Email</label><input type="email" placeholder="georges@email.com"/></div>
+        <div class="form-field"><label>Phone (optional)</label><input type="tel" placeholder="(313) 555-0100"/></div>
+        <div class="form-field"><label>Subject</label>
+          <select>
+            <option>Membership Application</option>
+            <option>Event Information</option>
+            <option>Shooting Lessons</option>
+            <option>Sponsorship</option>
+            <option>General Question</option>
+          </select>
+        </div>
+        <div class="form-field"><label>Message</label><textarea rows="4" placeholder="Tell us how we can help..."></textarea></div>
+        <button type="submit" class="contact-submit">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <div class="cinfo-item"><div class="cinfo-icon">📍</div><div class="cinfo-text"><h4>Location</h4><p>Michigan Range & Grounds<br>Greater Detroit Area, MI</p></div></div>
+        <div class="cinfo-item"><div class="cinfo-icon">✉️</div><div class="cinfo-text"><h4>Email</h4><p>info@lahsc.org<br>membership@lahsc.org</p></div></div>
+        <div class="cinfo-item"><div class="cinfo-icon">📞</div><div class="cinfo-text"><h4>Phone</h4><p>(313) 555-LAHSC<br>Mon–Sat, 9 AM – 6 PM</p></div></div>
+        <div class="cinfo-item"><div class="cinfo-icon">🌐</div><div class="cinfo-text"><h4>Social Media</h4><p>Facebook · Instagram · YouTube<br>@LAHSC_Official</p></div></div>
+        <div class="cinfo-item"><div class="cinfo-icon">🇱🇧</div><div class="cinfo-text"><h4>بالعربي</h4><p>نادي الصيد و الرمايه اللبناني الاميركي<br>Est. 2022 · Michigan</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="background:var(--cream-dark);padding:0 1.5rem;position:relative;z-index:1">
+  <div class="ornament"><div class="ornament-line"></div><div class="ornament-center">✦</div><div class="ornament-line"></div></div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-logo">
+      <img src="club.jpg" alt="LAHSC"/>
+      <div class="footer-logo-text">LAHSC<span>Lebanese American Hunting & Sporting Club</span></div>
+    </div>
+    <div class="footer-links">
+      <a href="#about">About</a><a href="#events">Events</a><a href="#gallery">Gallery</a><a href="#membership">Membership</a><a href="#contact">Contact</a>
+    </div>
+    <div class="footer-est">Est. 2022<br>Michigan, USA</div>
+  </div>
+  <div class="footer-copy">© 2026 Lebanese American Hunting & Sporting Club · lahsc.org · All rights reserved</div>
+</footer>
+
+<script>
+async function save(k,v){try{await window.storage.set(k,JSON.stringify(v))}catch(e){try{localStorage.setItem(k,JSON.stringify(v))}catch(e2){}}}
+async function load(k,d){try{const r=await window.storage.get(k);return r?JSON.parse(r.value):d}catch(e){try{const s=localStorage.getItem(k);return s?JSON.parse(s):d}catch{return d}}}
+
+let events=[],gallery=[],subscribers=[],admins=[],aboutData={},currentAdmin=null;
+
+async function init(){
+  events=await load('lahsc_events',[]);
+  gallery=await load('lahsc_gallery',[]);
+  subscribers=await load('lahsc_subscribers',[]);
+  admins=await load('lahsc_admins',[{user:'admin',pass:'lahsc2022',name:'Club Admin'}]);
+  aboutData=await load('lahsc_about',{tagline:'',desc:'',members:'200+',eventsPerYear:'12',quote:''});
+  renderEvents();renderGallery();applyAbout();
+}
+init();
+
+function openAdmin(){document.getElementById('admin-overlay').style.display='block';document.body.style.overflow='hidden';}
+function closeAdmin(){document.getElementById('admin-overlay').style.display='none';document.body.style.overflow='';}
+
+function doLogin(){
+  const u=document.getElementById('login-user').value.trim();
+  const p=document.getElementById('login-pass').value.trim();
+  const found=admins.find(a=>a.user===u&&a.pass===p);
+  if(found){currentAdmin=found;document.getElementById('admin-login-screen').style.display='none';document.getElementById('admin-main').style.display='block';renderEventsList();renderGalleryList();}
+  else{document.getElementById('login-error').style.display='block';}
+}
+
+function switchTab(name){
+  document.querySelectorAll('.admin-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.admin-section').forEach(s=>s.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  const idx=['events','gallery','about','subscribers','admins'].indexOf(name);
+  document.querySelectorAll('.admin-tab')[idx].classList.add('active');
+  if(name==='subscribers')renderSubscribersList();
+  if(name==='admins')renderAdminsList();
+}
+
+const TYPE_LABELS={shoot:'Sporting Clays',hunt:'Hunting Trip',social:'Club Social',tournament:'Tournament',course:'Safety Course'};
+const TYPE_TAG={shoot:'tag-shoot',hunt:'tag-hunt',social:'tag-social',tournament:'tag-shoot',course:'tag-hunt'};
+
+function addEvent(){
+  const name=document.getElementById('ev-name').value.trim();
+  const date=document.getElementById('ev-date').value;
+  if(!name||!date){alert('Please enter event name and date.');return;}
+  const ev={id:Date.now(),name,type:document.getElementById('ev-type').value,date,time:document.getElementById('ev-time').value,location:document.getElementById('ev-location').value,access:document.getElementById('ev-access').value,desc:document.getElementById('ev-desc').value};
+  events.push(ev);save('lahsc_events',events);
+  ['ev-name','ev-time','ev-location','ev-desc'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('ev-date').value='';
+  renderEvents();renderEventsList();
+}
+function deleteEvent(id){events=events.filter(e=>e.id!==id);save('lahsc_events',events);renderEvents();renderEventsList();}
+
+function renderEvents(){
+  const grid=document.getElementById('events-grid');
+  if(!events.length){grid.innerHTML='<div class="empty-events">No events scheduled yet. Check back soon — or subscribe below for reminders!</div>';return;}
+  const sorted=[...events].sort((a,b)=>new Date(a.date)-new Date(b.date));
+  grid.innerHTML=sorted.map(ev=>{
+    const d=new Date(ev.date+'T12:00:00');
+    const mo=d.toLocaleString('en',{month:'short'}).toUpperCase();
+    const dy=d.getDate();
+    const accessLabel=ev.access==='members'?'Members Only':ev.access==='invite'?'By Invitation':'Open to All';
+    return`<div class="event-card">
+      <div class="event-date-badge"><span class="mo">${mo}</span><span class="dy">${dy}</span></div>
+      <div class="event-type-lbl">${TYPE_LABELS[ev.type]||ev.type}</div>
+      <div class="event-name">${ev.name}</div>
+      <div class="event-details">${ev.location?'📍 '+ev.location+'<br>':''}${ev.time?'🕘 '+ev.time+'<br>':''}${ev.desc||''}</div>
+      <span class="event-tag ${TYPE_TAG[ev.type]||'tag-shoot'}">${accessLabel}</span>
+    </div>`;
+  }).join('');
+}
+function renderEventsList(){
+  const el=document.getElementById('events-admin-list');
+  if(!events.length){el.innerHTML='<div class="admin-empty">No events yet.</div>';return;}
+  el.innerHTML=[...events].sort((a,b)=>new Date(a.date)-new Date(b.date)).map(ev=>`
+    <div class="admin-list-item">
+      <div class="admin-list-item-info"><strong>${ev.name}</strong><span>${ev.date} · ${TYPE_LABELS[ev.type]} · ${ev.location||'TBD'}</span></div>
+      <div class="admin-item-btns"><button class="btn-del" onclick="deleteEvent(${ev.id})">Delete</button></div>
+    </div>`).join('');
+}
+
+let galImgData=null;
+function previewGalImg(e){
+  const file=e.target.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=r=>{galImgData=r.result;document.getElementById('gal-preview').style.display='block';document.getElementById('gal-preview-img').src=r.result;};
+  reader.readAsDataURL(file);
+}
+function addGalleryItem() {
+  const fileInput = document.getElementById('gal-file');
+  const file = fileInput.files[0];
+
+  if (!file) {
+    alert("Please choose an image first.");
+    return;
+  }
+
+  const title = prompt("Enter photo title:") || "Club Photo";
+  const caption = document.getElementById('gal-caption').value.trim() || "Club Photo";
+
+  const reader = new FileReader();
+
+  reader.onload = function(e) {
+    gallery.push({
+      id: Date.now(),
+      title: title,
+      caption: caption,
+      img: e.target.result
+    });
+
+    save('lahsc_gallery', gallery);
+
+    document.getElementById('gal-caption').value = '';
+    document.getElementById('gal-preview').style.display = 'none';
+    document.getElementById('gal-file').value = '';
+    galImgData = null;
+
+    renderGallery();
+    renderGalleryList();
+  };
+
+  reader.readAsDataURL(file);
+}
+function deleteGalleryItem(id){gallery=gallery.filter(g=>g.id!==id);save('lahsc_gallery',gallery);renderGallery();renderGalleryList();}
+function renderGallery(){
+  const grid=document.getElementById('gallery-grid');
+  if(!gallery.length){grid.innerHTML='<div class="gallery-empty-msg">No photos yet. Add them via the Admin panel.</div>';return;}
+  grid.innerHTML=gallery.map((g,i)=>`
+    <div class="gal-item${i===0?' tall':''}">
+      ${g.img?`<img src="${g.img}" alt="${g.caption}"/>`:`<div class="gal-placeholder"><div class="big">📷</div><div>${g.caption}</div></div>`}
+      <div class="caption">${g.caption}</div>
+    </div>`).join('');
+}
+function renderGallery() {
+
+  const grid = document.getElementById('gallery-grid');
+
+  if (!gallery.length) {
+    grid.innerHTML = `
+      <div class="gallery-empty-msg">
+        No photos yet. Add them via the Admin panel.
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = gallery.map((g, i) => `
+    <div class="gal-item ${i === 0 ? 'tall' : ''}">
+
+      <img src="${g.img}" alt="${g.title}">
+
+      <div class="caption">
+        <strong style="display:block;font-size:13px;margin-bottom:3px;">
+          ${g.title}
+        </strong>
+
+        <span style="font-size:11px;">
+          ${g.caption}
+        </span>
+      </div>
+
+    </div>
+  `).join('');
+}
+
+function saveAbout(){
+  aboutData={tagline:document.getElementById('ab-tagline').value||aboutData.tagline,desc:document.getElementById('ab-desc').value||aboutData.desc,members:document.getElementById('ab-members').value||aboutData.members,eventsPerYear:document.getElementById('ab-events').value||aboutData.eventsPerYear,quote:document.getElementById('ab-quote').value||aboutData.quote};
+  save('lahsc_about',aboutData);applyAbout();
+  const msg=document.getElementById('about-saved-msg');msg.style.display='block';setTimeout(()=>msg.style.display='none',3000);
+}
+function applyAbout(){
+  if(aboutData.tagline)document.getElementById('hero-tagline-el').textContent=aboutData.tagline;
+  if(aboutData.desc){document.getElementById('hero-desc-el').textContent=aboutData.desc;document.getElementById('about-desc-el').textContent=aboutData.desc;}
+  if(aboutData.members)document.getElementById('stat-members').textContent=aboutData.members;
+  if(aboutData.eventsPerYear)document.getElementById('stat-events').textContent=aboutData.eventsPerYear;
+  if(aboutData.quote)document.getElementById('about-quote-el').textContent='"'+aboutData.quote+'"';
+}
+
+function addSubscriber(){
+  const name=document.getElementById('sub-name').value.trim();
+  const email=document.getElementById('sub-email').value.trim();
+  const phone=document.getElementById('sub-phone').value.trim();
+  if(!email&&!phone){alert('Please enter at least an email or phone.');return;}
+  subscribers.push({id:Date.now(),name,email,phone,date:new Date().toLocaleDateString()});
+  save('lahsc_subscribers',subscribers);
+  ['sub-name','sub-email','sub-phone'].forEach(id=>document.getElementById(id).value='');
+  const s=document.getElementById('sub-success');s.style.display='block';setTimeout(()=>s.style.display='none',4000);
+}
+function renderSubscribersList(){
+  const wrap=document.getElementById('subscribers-list-wrap');
+  if(!subscribers.length){wrap.innerHTML='<div class="admin-empty">No subscribers yet.</div>';return;}
+  wrap.innerHTML=`<div style="font-size:13px;color:var(--text-light);margin-bottom:10px">${subscribers.length} subscriber${subscribers.length!==1?'s':''}</div>
+  <div class="subscribers-list">${subscribers.map(s=>`<div class="sub-row"><div class="sub-info"><strong>${s.name||'—'}</strong><span>${s.email||''} ${s.phone?'· '+s.phone:''}</span></div><button class="btn-del" onclick="delSubscriber(${s.id})" style="font-size:10px;padding:4px 10px">Remove</button></div>`).join('')}</div>
+  <button onclick="exportCSV()" style="margin-top:10px;background:var(--olive);color:var(--gold-light);border:none;padding:7px 16px;border-radius:3px;font-size:11px;cursor:pointer;font-family:'Cinzel',serif;letter-spacing:0.5px">Export CSV</button>`;
+}
+function delSubscriber(id){subscribers=subscribers.filter(s=>s.id!==id);save('lahsc_subscribers',subscribers);renderSubscribersList();}
+function exportCSV(){
+  const rows=[['Name','Email','Phone','Date'],...subscribers.map(s=>[s.name,s.email,s.phone,s.date])];
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([rows.map(r=>r.join(',')).join('\n')],{type:'text/csv'}));a.download='lahsc_subscribers.csv';a.click();
+}
+
+function addAdmin(){
+  const user=document.getElementById('new-admin-user').value.trim();
+  const pass=document.getElementById('new-admin-pass').value.trim();
+  const name=document.getElementById('new-admin-name').value.trim();
+  if(!user||!pass){alert('Username and password required.');return;}
+  if(admins.find(a=>a.user===user)){alert('Username already exists.');return;}
+  admins.push({user,pass,name});save('lahsc_admins',admins);
+  document.getElementById('new-admin-user').value='';document.getElementById('new-admin-pass').value='';document.getElementById('new-admin-name').value='';
+  renderAdminsList();
+}
+function deleteAdmin(user){
+  if(user==='admin'){alert('Cannot delete the default admin.');return;}
+  admins=admins.filter(a=>a.user!==user);save('lahsc_admins',admins);renderAdminsList();
+}
+function renderAdminsList(){
+  document.getElementById('admins-list').innerHTML=admins.map(a=>`
+    <div class="admin-list-item">
+      <div class="admin-list-item-info"><strong>${a.name||a.user}</strong><span>@${a.user}${a.user==='admin'?' · default admin':''}</span></div>
+      <div class="admin-item-btns">${a.user!=='admin'?`<button class="btn-del" onclick="deleteAdmin('${a.user}')">Remove</button>`:'<span style="font-size:10px;color:var(--text-light)">Protected</span>'}</div>
+    </div>`).join('');
+}
+</script>
+</body>
+</html>
