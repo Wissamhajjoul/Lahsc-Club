@@ -816,7 +816,6 @@ function addGalleryItem() {
 
 function deleteGalleryItem(id){gallery=gallery.filter(g=>g.id!==id);save('lahsc_gallery',gallery);renderGallery();renderGalleryList();}
 function renderGallery() {
-
   const grid = document.getElementById('gallery-grid');
 
   if (!gallery.length) {
@@ -828,35 +827,38 @@ function renderGallery() {
     return;
   }
 
-  grid.innerHTML = gallery.map((g, i) => `
-    <div class="gal-item ${i === 0 ? 'tall' : ''}">
+  grid.innerHTML = gallery.map((g, index) => `
+    <div class="gal-item">
 
-      <img src="${g.img}" alt="${g.title}">
+      <div style="position:relative;">
 
- <div style="
-  background:#f5f1e8;
-  padding:12px;
-  border-top:1px solid rgba(0,0,0,0.08);
-">
+        <img src="${g.img}" alt="${g.title || 'Club Photo'}">
 
-  <div style="
-    font-size:15px;
-    font-weight:700;
-    color:#222;
-    margin-bottom:4px;
-  ">
-    ${g.title}
-  </div>
+        <button onclick="deleteGalleryItem(${g.id})"
+          style="
+            position:absolute;
+            top:10px;
+            right:10px;
+            background:#b52222;
+            color:white;
+            border:none;
+            border-radius:50%;
+            width:34px;
+            height:34px;
+            cursor:pointer;
+            font-size:16px;
+            font-weight:bold;
+            box-shadow:0 2px 8px rgba(0,0,0,0.3);
+          ">
+          ✕
+        </button>
 
-  <div style="
-    font-size:13px;
-    color:#666;
-    line-height:1.5;
-  ">
-    ${g.caption}
-  </div>
+      </div>
 
-</div>
+      <div class="caption">
+        <strong>${g.title || 'Club Photo'}</strong>
+        <span>${g.caption || ''}</span>
+      </div>
 
     </div>
   `).join('');
