@@ -744,18 +744,7 @@ function addGalleryItem() {
   reader.readAsDataURL(file);
 }
 
-  reader.readAsDataURL(file);
-}
 function deleteGalleryItem(id){gallery=gallery.filter(g=>g.id!==id);save('lahsc_gallery',gallery);renderGallery();renderGalleryList();}
-function renderGallery(){
-  const grid=document.getElementById('gallery-grid');
-  if(!gallery.length){grid.innerHTML='<div class="gallery-empty-msg">No photos yet. Add them via the Admin panel.</div>';return;}
-  grid.innerHTML=gallery.map((g,i)=>`
-    <div class="gal-item${i===0?' tall':''}">
-      ${g.img?`<img src="${g.img}" alt="${g.caption}"/>`:`<div class="gal-placeholder"><div class="big">📷</div><div>${g.caption}</div></div>`}
-      <div class="caption">${g.caption}</div>
-    </div>`).join('');
-}
 function renderGallery() {
 
   const grid = document.getElementById('gallery-grid');
@@ -768,36 +757,6 @@ function renderGallery() {
     `;
     return;
   }
-
-  grid.innerHTML = gallery.map((g) => `
-    <div class="gal-item">
-
-      <img src="${g.img}" alt="${g.title || 'Club Photo'}">
-
-      <div class="caption">
-
-        <div style="
-          font-size:14px;
-          font-weight:700;
-          margin-bottom:4px;
-          color:#fff;
-        ">
-          ${g.title || 'Club Photo'}
-        </div>
-
-        <div style="
-          font-size:12px;
-          line-height:1.4;
-          color:#ddd;
-        ">
-          ${g.caption || ''}
-        </div>
-
-      </div>
-
-    </div>
-  `).join('');
-}
 
   grid.innerHTML = gallery.map((g, i) => `
     <div class="gal-item ${i === 0 ? 'tall' : ''}">
