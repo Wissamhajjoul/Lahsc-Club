@@ -150,8 +150,9 @@ h2.light{color:var(--gold-light) !important}
 .btn-notify:hover{background:var(--red-light)}
 .notify-success{display:none;color:#8dd47f;font-family:'EB Garamond',serif;font-style:italic;font-size:15px;margin-top:10px}
 
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.gal-item{border-radius:4px;overflow:hidden;aspect-ratio:4/3;background:rgba(25,42,10,0.7);display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer;transition:transform 0.2s;border:1px solid rgba(201,168,76,0.15)}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;
+}
+.gal-item{border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:rgba(25,42,10,0.7);display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer;transition:transform 0.2s;border:1px solid rgba(201,168,76,0.15)}
 .gal-item:hover{transform:scale(1.02)}
 .gal-item.tall{grid-row:span 2;aspect-ratio:auto}
 .gal-item img{width:100%;height:100%;object-fit:cover}
@@ -707,6 +708,7 @@ function previewGalImg(e){
   reader.readAsDataURL(file);
 }
 function addGalleryItem() {
+
   const fileInput = document.getElementById('gal-file');
   const file = fileInput.files[0];
 
@@ -715,16 +717,17 @@ function addGalleryItem() {
     return;
   }
 
-  const title = prompt("Enter photo title:") || "Club Photo";
-  const caption = document.getElementById('gal-caption').value.trim() || "Club Photo";
+  const title = prompt("Enter photo title:");
+  const caption = document.getElementById('gal-caption').value.trim();
 
   const reader = new FileReader();
 
   reader.onload = function(e) {
+
     gallery.push({
       id: Date.now(),
-      title: title,
-      caption: caption,
+      title: title || 'Club Photo',
+      caption: caption || '',
       img: e.target.result
     });
 
@@ -733,11 +736,13 @@ function addGalleryItem() {
     document.getElementById('gal-caption').value = '';
     document.getElementById('gal-preview').style.display = 'none';
     document.getElementById('gal-file').value = '';
-    galImgData = null;
 
     renderGallery();
     renderGalleryList();
   };
+
+  reader.readAsDataURL(file);
+}
 
   reader.readAsDataURL(file);
 }
@@ -763,6 +768,36 @@ function renderGallery() {
     `;
     return;
   }
+
+  grid.innerHTML = gallery.map((g) => `
+    <div class="gal-item">
+
+      <img src="${g.img}" alt="${g.title || 'Club Photo'}">
+
+      <div class="caption">
+
+        <div style="
+          font-size:14px;
+          font-weight:700;
+          margin-bottom:4px;
+          color:#fff;
+        ">
+          ${g.title || 'Club Photo'}
+        </div>
+
+        <div style="
+          font-size:12px;
+          line-height:1.4;
+          color:#ddd;
+        ">
+          ${g.caption || ''}
+        </div>
+
+      </div>
+
+    </div>
+  `).join('');
+}
 
   grid.innerHTML = gallery.map((g, i) => `
     <div class="gal-item ${i === 0 ? 'tall' : ''}">
