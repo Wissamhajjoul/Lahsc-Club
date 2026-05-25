@@ -152,14 +152,84 @@ h2.light{color:var(--gold-light) !important}
 
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;
 }
-.gal-item{border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:rgba(25,42,10,0.7);display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer;transition:transform 0.2s;border:1px solid rgba(201,168,76,0.15)}
-.gal-item:hover{transform:scale(1.02)}
-.gal-item.tall{grid-row:span 2;aspect-ratio:auto}
-.gal-item img{width:100%;height:100%;object-fit:cover}
-.gal-item .caption{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.58);color:#fff;font-size:11px;padding:6px 10px;font-family:'Cinzel',serif}
-.gal-placeholder{display:flex;flex-direction:column;align-items:center;gap:8px;color:#6a7a58;font-size:12px}
-.gal-placeholder .big{font-size:32px;opacity:0.3}
-.gallery-empty-msg{text-align:center;color:var(--text-light);font-family:'EB Garamond',serif;font-style:italic;font-size:18px;padding:40px;grid-column:1/-1}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:18px;
+}
+
+.gal-item{
+  border-radius:16px;
+  overflow:hidden;
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+  cursor:pointer;
+  transition:transform 0.2s;
+  border:1px solid rgba(201,168,76,0.15);
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.gal-item:hover{
+  transform:translateY(-4px);
+}
+
+.gal-item.tall{
+  grid-row:span 1;
+}
+
+.gal-item img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  display:block;
+}
+
+.gal-item .caption{
+  background:#f5f1e8;
+  color:#222;
+  padding:14px;
+  font-family:'Source Sans 3',sans-serif;
+}
+
+.gal-item .caption strong{
+  display:block;
+  font-size:16px;
+  margin-bottom:6px;
+  color:#111;
+}
+
+.gal-item .caption span{
+  font-size:13px;
+  color:#666;
+  line-height:1.5;
+}
+
+.gal-placeholder{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  color:#6a7a58;
+  font-size:12px;
+  padding:40px;
+}
+
+.gal-placeholder .big{
+  font-size:40px;
+  opacity:0.3;
+}
+
+.gallery-empty-msg{
+  text-align:center;
+  color:var(--text-light);
+  font-family:'EB Garamond',serif;
+  font-style:italic;
+  font-size:18px;
+  padding:40px;
+  grid-column:1/-1;
+}
 
 .mem-card-main{background:rgba(12,9,2,0.94);border-radius:6px;padding:48px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;border:1px solid rgba(201,168,76,0.22);position:relative;overflow:hidden}
 .mem-card-main::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(201,168,76,0.07)}
@@ -763,15 +833,30 @@ function renderGallery() {
 
       <img src="${g.img}" alt="${g.title}">
 
-      <div class="caption">
-        <strong style="display:block;font-size:13px;margin-bottom:3px;">
-          ${g.title}
-        </strong>
+ <div style="
+  background:#f5f1e8;
+  padding:12px;
+  border-top:1px solid rgba(0,0,0,0.08);
+">
 
-        <span style="font-size:11px;">
-          ${g.caption}
-        </span>
-      </div>
+  <div style="
+    font-size:15px;
+    font-weight:700;
+    color:#222;
+    margin-bottom:4px;
+  ">
+    ${g.title}
+  </div>
+
+  <div style="
+    font-size:13px;
+    color:#666;
+    line-height:1.5;
+  ">
+    ${g.caption}
+  </div>
+
+</div>
 
     </div>
   `).join('');
