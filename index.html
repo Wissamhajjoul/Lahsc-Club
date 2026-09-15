@@ -778,40 +778,33 @@ function previewGalImg(e){
   reader.readAsDataURL(file);
 }
 function addGalleryItem() {
+  const caption = document.getElementById('gal-caption').value.trim();
 
-  const fileInput = document.getElementById('gal-file');
-  const file = fileInput.files[0];
-
-  if (!file) {
+  if (!galImgData) {
     alert("Please choose an image first.");
     return;
   }
 
   const title = prompt("Enter photo title:");
-  const caption = document.getElementById('gal-caption').value.trim();
 
-  const reader = new FileReader();
+  gallery.push({
+    id: Date.now(),
+    title: title || 'Club Photo',
+    caption: caption || '',
+    img: galImgData
+  });
 
-  reader.onload = function(e) {
+  save('lahsc_gallery', gallery);
 
-    gallery.push({
-      id: Date.now(),
-      title: title || 'Club Photo',
-      caption: caption || '',
-      img: e.target.result
-    });
+  document.getElementById('gal-caption').value = '';
+  document.getElementById('gal-preview').style.display = 'none';
+  document.getElementById('gal-preview-img').src = '';
+  document.getElementById('gal-file').value = '';
 
-    save('lahsc_gallery', gallery);
+  galImgData = null;
 
-    document.getElementById('gal-caption').value = '';
-    document.getElementById('gal-preview').style.display = 'none';
-    document.getElementById('gal-file').value = '';
-
-    renderGallery();
-    renderGalleryList();
-  };
-
-  reader.readAsDataURL(file);
+  renderGallery();
+  renderGalleryList();
 }
 
 function deleteGalleryItem(id){gallery=gallery.filter(g=>g.id!==id);save('lahsc_gallery',gallery);renderGallery();renderGalleryList();}
